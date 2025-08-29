@@ -8,11 +8,6 @@ while num <= 10:
 """WHILE
 Contadores - Acumuladores - Máximos y mínimos
 
-
-
-
-
-
 Solicitar al usuario que ingrese números (hasta que no quiera ingresar más). Calcular la suma de los números positivos y el producto de los negativos.
 Ingresar 10 números enteros. Determinar el máximo y el mínimo.
 
