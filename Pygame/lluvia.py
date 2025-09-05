@@ -18,13 +18,13 @@ while running:
         if event.type == pygame.QUIT:
             running = False
   
-#TODO #################LOGICA DEL JUEGO#################
+##################LOGICA DEL JUEGO#################
 
-#TODO #################LOGICA DEL JUEGO#################
+# #################LOGICA DEL JUEGO#################
 
 #?PANTALLA
-    scree.fill("WHITE")
-#TODO ################# ZONA DE DIBUJO #################
+    scree.fill("Black")
+# ################# ZONA DE DIBUJO #################
     for coor in coord_list:
         pygame.draw.line(scree, "BLUE", (coor), (coor[0], coor[1]+ 10), 2)
         coor[1] += 5
@@ -32,7 +32,7 @@ while running:
             coor[1] = 0
             coor[0] = random.randint(0, 800)
 
-#TODO ################# ZONA DE DIBUJO #################
+# ################# ZONA DE DIBUJO #################
 #?RENDERIZADO
     pygame.display.flip()
     clock.tick(60)
