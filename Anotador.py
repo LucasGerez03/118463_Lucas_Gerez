@@ -76,3 +76,10 @@ def sumo_otros_numeros(num1:int, num2:int) -> int:
     return resultado
 
 # poner el return es por fomralidad, puede haber funciones que no retuornen nada
+
+
+############################################################################
+
+# clase 6 
+
+#Los inputs por lo general se ponen afuera de las funciones
