@@ -83,3 +83,15 @@ def sumo_otros_numeros(num1:int, num2:int) -> int:
 # clase 6 
 
 #Los inputs por lo general se ponen afuera de las funciones
+
+# Pasar por referencia una lista o diccionario, hace que se modifique el original (mutable) por su posicion de memoria
+# Pasar por valor una variable simple (int, str, float) hace que no se modifique el original (immutable)
+
+#Necesito un programa que me haga sumar del 1 al 1000 pero solamente los numeros que sean pares
+def sumar_pares_hasta(num:int) -> int:
+    suma = 0
+    for n in range(1, num + 1):
+        if n % 2 == 0:
+            suma += n
+    return suma
+
