@@ -94,7 +94,7 @@ def primo(num_p): #trato de que salga...
      for numero in range(1, num_p +1):
           if num_p % numero == 0:
                contador += 1
-               if contador == 2: T
+               if contador == 2: 
      
      
 

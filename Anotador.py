@@ -87,11 +87,11 @@ def sumo_otros_numeros(num1:int, num2:int) -> int:
 # Pasar por referencia una lista o diccionario, hace que se modifique el original (mutable) por su posicion de memoria
 # Pasar por valor una variable simple (int, str, float) hace que no se modifique el original (immutable)
 
-#Necesito un programa que me haga sumar del 1 al 1000 pero solamente los numeros que sean pares
-def sumar_pares_hasta(num:int) -> int:
-    suma = 0
-    for n in range(1, num + 1):
-        if n % 2 == 0:
-            suma += n
-    return suma
 
+## clase 7
+#SLICING
+# PRINT(letara[comienzo:fin:paso])
+
+#abs() solamente devuelve el numero en positivo si pasa un negativo
+#abs(-5) devuelve 5
+#abs(2.4) devuelve 2.4

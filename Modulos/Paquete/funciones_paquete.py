@@ -29,3 +29,18 @@ def calcular_factorial(numero:int) -> int:
 #print(calcular_factorial(5))  # 120
 
 
+######################################################
+def crear_array(longitud:int, valor_inicial=0) -> list|None:
+    try:
+        array = [valor_inicial] * longitud
+        return array    
+    except TypeError:
+        return None
+    
+##############################################################
+def ingresar_numeros(cantidad:int) -> list|None:
+        array = crear_array(cantidad)
+        for i in range(cantidad):
+            numero = int(input(f"Ingrese el número {i+1}: "))
+            array[i] = numero
+        return array
