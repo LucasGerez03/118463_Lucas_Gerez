@@ -44,3 +44,4 @@ def ingresar_numeros(cantidad:int) -> list|None:
             numero = int(input(f"Ingrese el número {i+1}: "))
             array[i] = numero
         return array
+
