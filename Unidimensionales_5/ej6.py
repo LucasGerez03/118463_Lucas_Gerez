@@ -1,6 +1,6 @@
 # Escribir una función que reciba como parámetros una lista de enteros y retorne la posición del valor máximo encontrado.
 
-def posicion_del_numero(lista_num=[]) -> int|None:
+def posicion_del_numero_maximo(lista_num=[]) -> int|None:
     if  len(lista_num) == 0 or type(lista_num) != list: #si no es una lista o si está vacia
         return None
     maximo = max(lista_num)   

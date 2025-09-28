@@ -4,4 +4,4 @@
 
 def potencia(base, exponente):
     return base ** exponente
-print(potencia(2, 3)) 
+# print(potencia(2, 3)) 

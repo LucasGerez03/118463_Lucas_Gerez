@@ -1,4 +1,4 @@
-#Escribir una función que reciba como parámetros una lista de enteros y muestre la/las posiciones en donde se encuentra el valor máximo hallado. hacerlo sin enumerate
+#Escribir una función que reciba como parámetros una lista de enteros y muestre la/las posiciones en donde se encuentra el valor máximo hallado.
 
 def mostrar_posiciones_valor_maximo(lista: list) -> None:
     if len(lista) == 0:

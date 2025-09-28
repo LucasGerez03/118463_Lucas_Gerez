@@ -11,4 +11,4 @@ parent = os.path.dirname(current)
 sys.path.append(parent)
 from libreria.funciones import * 
 
-es_par_o_impar(5)
+

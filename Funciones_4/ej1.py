@@ -2,6 +2,6 @@
 
 def ingrese_numero():
     numero = int(input("ingrese un numero entero: "))
-    print(numero)
+    return numero
 
 ingrese_numero()

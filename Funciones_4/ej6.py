@@ -2,7 +2,9 @@
 def es_par_o_impar(numero):
     if numero % 2 == 0:
         print(f"El número {numero} es par.")
+        return 1
     else:
         print(f"El número {numero} es impar.")
+        return 0
 
 es_par_o_impar(5)
