@@ -1,3 +1,23 @@
+########################################################
+def esta_entre(num, num1, num2):
+    if num >= num1 and num <= num2:
+        return True
+
+#########################################################
+def es_positivo(num) -> bool | None:
+    try:
+        if num >= 0:
+            return True
+        else:
+            return False
+    except (TypeError):
+        return None
+
+# print(es_positivo(-5))
+# print(es_positivo(4))
+# print(es_positivo("asdd"))
+# print(es_positivo([2,3,4]))
+###########################################################
 def potencia(base, exponente):
     return base ** exponente
 

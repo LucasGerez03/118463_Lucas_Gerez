@@ -5,9 +5,7 @@
 # 	5 x 2 = 10
 # 	5 x 3  = 15 …
 
-num = int(input("ingrese un numero: "))
-multiplicador = 0
-while multiplicador <= 10 :
-    print(f"{num} x {multiplicador} = {num * multiplicador} ")
-    multiplicador += 1
+n = int(input("Ingrese un número: "))
+for i in range(0, 11):
+    print(f"{n} x {i} = {n * i}")
     
