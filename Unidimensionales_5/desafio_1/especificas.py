@@ -1,26 +1,59 @@
-from generales import esta_entre
+def sumar_pares_de_lista(lista=[]):
+    total = 0
+    for numero in lista:
+        if es_par(numero):
+            total += numero
+    return total
 
-def mostar_msg():
-    print("Opciones del Menú:")
-    print("1-Ingresar datos")
-    print("2-Cantidad de positivos y negativos")
-    print("3-Suma de los números pares")
-    print("4-Mayor número impar")
-    print("5-Listar los números ingresados")
-    print("6-Listar los números pares")
-    print("7-Listar los números en posiciones impares")
-    print("8-Salir")
+def mayor_numero_impar(lista=[]):
+    lista_impar = []
+    for num in lista:
+        if not es_par(num):
+            lista_impar += [num]
+    if not lista_impar:
+        return []
+    else:
+        return max(lista_impar)
 
-def ingresar_numeros(): #validacion de la lista
-    lista= []
-    for i in range(10):
-        numero = int(input("Ingrese un numero: ")) 
-        if esta_entre(numero,-1000, 1000): #verificar el ingreso en rango
-            lista += [numero]
-        else:
-            print("ERROR al ingresar un numero, el rango asignado es de: (-1000 hasta 1000)")
-            numero = int(input("Porfavor ingrese un numero valido:")) 
-            while not esta_entre(numero, -1000, 1000): #repetir bucle hasta un ingreso valido
-                numero = int(input("Porfavor ingrese un numero valido:"))
-            lista += [numero] #ingresar el numero valido
-    return lista
+# print(mayor_numero_impar([]))
+
+def mostrar_lista_en_orden(lista):
+    for numero in lista:
+        print(numero)
+
+# mostrar_lista_en_orden([])
+
+def mostrar_numeros_pares(lista):
+    for numero in lista:
+        if es_par(numero):
+            print(numero)
+
+# mostrar_numeros_pares([])
+
+def mostrar_numeros_en_pos_impares(lista):
+    for i in range(len(lista)):
+        if not es_par(i):
+            print(lista[i])
+
+# mostrar_numeros_en_pos_impares([])
+
+def esta_entre(num, num1, num2): #validacion del ingreso del numero en rango
+    if num >= num1 and num <= num2:
+        return True
+    else:
+        return False
+    
+def es_positivo(num) -> bool | None:
+        try:
+            if num >= 0:
+                return True
+            else:
+                return False
+        except (TypeError):
+            return None
+        
+def es_par(numero):
+    if numero % 2 == 0:
+        return True
+    else:
+        return False

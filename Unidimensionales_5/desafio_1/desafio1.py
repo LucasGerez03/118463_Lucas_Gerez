@@ -26,39 +26,44 @@
 from especificas import *
 from generales import *
 
-# mostar_msg()
-# print(esta_entre(1,10,20))
-# print(es_positivo(-1))
-# ingresar_numeros()
+ingreso_numeros= False
+numeros_lista= []
+while True:
+    mostar_msg()
+    opcion = int(input("Ingrese una opcion: "))
+    match opcion:
+        case 1:
+            numeros_lista += ingresar_numeros()
+            ingreso_numeros= True 
+        case 2:
+            if ingreso_numeros:
+                print(cant_positivos_y_negativos(numeros_lista))
+            else:
+                print("Ingresar numeros antes de acceder a esta opcion")
+        case 3:
+            print(f"la suma total de los numeros pares de la lista es:{sumar_pares_de_lista(numeros_lista)}")
+        case 4:
+            print(f"mayor numero impar de la lista {print(mayor_numero_impar(numeros_lista))}")
+        case 5:
+            mostrar_lista_en_orden(numeros_lista)
+        case 6:
+            mostrar_numeros_pares(numeros_lista)
+        case 7:
+            if not ingreso_numeros:
+                print("Ingresar numeros antes de acceder a esta opcion")
+            else:
+                mostrar_numeros_en_pos_impares(numeros_lista)
 
-def cant_positivos_y_negativos(lista=[]):
-    positivos= []
-    negativos= []
-    cant_pos = 0
-    cant_neg = 0
-    for numero in lista:
-        if es_positivo(numero):
-            positivos+= [numero]
-            cant_pos+= 1
-        else:
-            negativos+= [numero]
-            cant_neg+=1
-    return f"-Cant. Negativos: {cant_neg}\nCant. Positivos: {cant_pos}\nLista Negativos: {negativos} \n Lista Positivos: {positivos}"
+        case 8:
+            print(f"Gracias por usar el programa, Adios")
+            break
 
-def sumar_pares_de_lista(lista=[]):
-    total = 0
-    for numero in lista:
-        if es_par(numero):
-            total += numero
-        else:
-            continue
-    return total
+    print("desea continuar?: ")
+    respuesta = input("Y/N: ")
+    if respuesta.lower() == "y":
+        continue
+    else:
+        print(f"Gracias por usar el programa, Adios :D")
+        break
 
-print(sumar_pares_de_lista([5,-2,-7,-8,12]))
-# print(cant_positivos_y_negativos([]))
 
-# while True:
-#     mostar_msg()
-#     opcion = int(input("ingrese una de las opcioens 1-8: "))
-
-# mostar_msg()
