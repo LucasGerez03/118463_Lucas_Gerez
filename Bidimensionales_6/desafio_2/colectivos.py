@@ -68,53 +68,48 @@ matriz_recaudacion1 = [
 ]
 
 
-#########################################################
-#OPCION 1
 
-def cargar_planilla_recaudacion(): 
-    try:
-        legajo = int(input("Porfavor ingrese su legajo: "))
-        if not es_chofer_valido(legajo):      
-                print("Legajo NO encontrado o Inválido, reintentar")
-                legajo = int(input("legajo: "))
-                # print("Su legajo debe constar de 6 numeros")
-        ingresar_recaudacion(matriz_coches)
-        pass
-    except:
-        pass
-    
-    
-def es_chofer_valido(legajo_chofer, matriz_chofer):
-    for i in range(len(matriz_chofer)):
-        for j in range(len(matriz_chofer[i])):
-            if matriz_chofer[i][j] == legajo_chofer: 
-                return True
-    return False
 
 
 
 def ingresar_recaudacion(matriz_colectivos):
-    try:    
-        num_linea = int(input("Ingrese el numero de su linea: ")) 
-        num_coche = int(input("Ingrese el numero de su coche: "))
         
-        while not esta_la_linea(num_linea, matriz_colectivos) or not esta_el_coche(num_coche, matriz_colectivos):
-            print("==============ERROR==============\nLinea o Coche NO encontrado/a")
-            num_linea = int(input("Ingrese un numero de linea valido: ")) 
-            num_coche = int(input("Ingrese un numero de coche valido: "))
+        #Ingreso la linea y coche y verifico que exista
+        bandera = False
+        while not bandera:
+            try:
+                num_linea = int(input("Ingrese el numero de su linea: ")) 
+                num_coche = int(input("Ingrese el numero de su coche: "))
+                if esta_la_linea(num_linea, matriz_colectivos) and esta_el_coche(num_coche, matriz_colectivos):
+                    bandera = True
+                else:
+                    print("================================================")
+                    print("ERROR: Linea o Coche NO encontrado/a")
+                    print("================================================")
+            except ValueError:
+                print("================================================")
+                print("ERROR DE TIPO: LINEA o COLECTIVO no válido")
+                print("================================================")
+
 
         indice_linea = num_linea - 1
-        encontrado = False
 
         for j in range(len(matriz_colectivos[indice_linea])): #si tengo la linea, solo busco en esa linea NO en toda la matriz
             if matriz_colectivos[indice_linea][j] == num_coche:
-                recaudacion = float(input("Ingrese la recaudacion: $")) #ingreso recaudacion
-                matriz_recaudacion[indice_linea][j] += recaudacion # reemplazo en la matriz recaudacion
-                print(f"recaudacion reemplazada con exito") 
-                encontrado = True
-                break
-    except ValueError:
-        print("LINEA o COLECTIVO no válido")
+                bandera = False
+                while not bandera:    
+                    try:    
+                        recaudacion = float(input("Ingrese la recaudacion: $")) #ingreso recaudacion
+                        if recaudacion >= 0:
+                            matriz_recaudacion[indice_linea][j] += recaudacion
+                            bandera = True # reemplazo en la matriz recaudacion
+                            print(f"=======Recaudacion realizada con exito=======")
+                        else:
+                            print("================================================")
+                            print("ERROR: Recaudacion debe ser POSITIVO")
+                            print("================================================")
+                    except ValueError:
+                        print("======ERROR DE TIPO: Recaudacion DEBE ser un NUMERO ENTERO======:")
 
 def esta_la_linea(num, matriz):
     flag = False
@@ -134,8 +129,8 @@ def esta_el_coche(num, matriz):
             break
     return flag
 
-ingresar_recaudacion(matriz_coches)
-print(matriz_recaudacion)
+# ingresar_recaudacion(matriz_coches)
+# print(matriz_recaudacion)
 #########################################################
 #OPCION 2
 
@@ -144,7 +139,7 @@ def mostrar_recaudacion_de_coches(matriz_recaudacion, matriz_colect):
         print(f"=================LINEA: {linea + 1}=================")
         for coche in range(len(matriz_recaudacion[linea])):
             print(f"Coche: {matriz_colect[linea][coche]}\nRecaudacion: {matriz_recaudacion[linea][coche]}")
-            print("**************************************")
+            print(" ")
     print("==========================================")
 
 # mostrar_recaudacion_de_coches(matriz_recaudacion, matriz_coches)
@@ -155,7 +150,7 @@ def mostrar_recaudacion_de_coches(matriz_recaudacion, matriz_colect):
 def calcular_y_mostrar_recaudacion_por_linea(matriz_recaudacion):
     for linea in matriz_recaudacion:
         recaudacion = sum(linea)
-        print(f"Recaudacion de linea {matriz_recaudacion.index(linea) + 1}: {recaudacion}")
+        print(f" \nRecaudacion de linea {matriz_recaudacion.index(linea) + 1}: {recaudacion}\n ")
 
 #calcular_y_mostrar_recaudacion_por_linea(matriz_recaudacion)
 
@@ -196,3 +191,65 @@ def calcular_y_mostrar_total_recaudacion(matriz_recaudacion):
 
 
 
+#########################################################
+#OPCION 1
+
+def cargar_planilla_recaudacion(matriz_chofer, matriz_coches): 
+        bandera_1 = False
+        while not bandera_1: 
+            try:    
+                legajo = int(input("Porfavor ingrese su legajo: "))
+                if es_chofer_valido(legajo, matriz_chofer):
+                    bandera_1 = True      
+                else:                    
+                    print("=========================================================")
+                    print(f"ERROR: Legajo {legajo} NO encontrado, reintentar")
+                    print("=========================================================")
+            except ValueError:
+                print("=========================================================")
+                print(f"ERROR DE TIPO: Legajo debe ser un numero de 6 digitos")
+                print("=========================================================")
+        ingresar_recaudacion(matriz_coches)
+    
+def es_chofer_valido(legajo_chofer, matriz_chofer):
+    for i in range(len(matriz_chofer)):
+        for j in range(len(matriz_chofer[i])):
+            if matriz_chofer[i][j] == legajo_chofer: 
+                return True
+    return False
+
+# cargar_planilla_recaudacion(matriz_chofer, matriz_coches)
+# print(matriz_recaudacion1)
+
+
+
+##########################################
+#PROGRAMA
+
+
+opcion = None
+while opcion != 6:
+    try:
+        mostrar_menu()
+        opcion = int(input("Ingrese una opcion (1-6): "))
+        match opcion:
+            case 6:
+                break
+            case 1:
+                cargar_planilla_recaudacion(matriz_chofer, matriz_coches)
+            case 2:
+                mostrar_recaudacion_de_coches(matriz_recaudacion, matriz_coches)
+            case 3:
+                calcular_y_mostrar_recaudacion_por_linea(matriz_recaudacion)
+            case 4:
+                calcular_y_mostrar_recaudacion_de_coche(matriz_coches, matriz_recaudacion)
+            case 5:
+                calcular_y_mostrar_total_recaudacion(matriz_recaudacion)
+            case _:
+                print("Opcion incorrecta, porfavor seleccione una valida (1-6)")
+
+        continuar = input("Desea continuar? (Y/N): ")
+        if continuar.lower() == "n":
+            break
+    except ValueError:        
+        print("ERROR DE TIPO: la opcion elegida debe ser un numero en el rango 1-6. ")     
