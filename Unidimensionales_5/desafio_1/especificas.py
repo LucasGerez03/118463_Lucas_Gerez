@@ -15,27 +15,19 @@ def mayor_numero_impar(lista=[]):
     else:
         return max(lista_impar)
 
-# print(mayor_numero_impar([]))
-
 def mostrar_lista_en_orden(lista):
     for numero in lista:
         print(numero)
-
-# mostrar_lista_en_orden([])
 
 def mostrar_numeros_pares(lista):
     for numero in lista:
         if es_par(numero):
             print(numero)
 
-# mostrar_numeros_pares([])
-
 def mostrar_numeros_en_pos_impares(lista):
     for i in range(len(lista)):
         if not es_par(i):
             print(lista[i])
-
-# mostrar_numeros_en_pos_impares([])
 
 def esta_entre(num, num1, num2): #validacion del ingreso del numero en rango
     if num >= num1 and num <= num2:
