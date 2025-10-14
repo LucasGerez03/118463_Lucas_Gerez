@@ -1,3 +1,75 @@
+from colorama import Style, Fore, Back, init
+init(autoreset = True)
+
+
+def imprime_error(msj=" "):
+    print(Fore.RED + Style.BRIGHT +"=" * 80)
+    print(Fore.RED + Style.BRIGHT + Back.BLACK +f"ERROR: {msj.upper()}")
+    print(Fore.RED + Style.BRIGHT +"=" * 80)
+
+def mostrar_menu():
+    print(Fore.CYAN + Style.DIM + Back.LIGHTBLUE_EX +"=================Elija una Opción=================")
+    print(Fore.CYAN + "1_")
+    print(Fore.CYAN + "2_")
+    print(Fore.CYAN + "3_")
+    print(Fore.CYAN + "4_")
+    print(Fore.CYAN + "5_")
+    print(Fore.CYAN + "6_")
+    print(Fore.CYAN + "==================================================")
+
+#########################################################################
+
+def continuar_menu():
+    continuar = input(Fore.GREEN + "Desea continuar? (Y/N): ")
+    if continuar.lower().strip() in ["n","no"]:
+        print(Fore.GREEN + "gracias por usar el programa :D")
+        return False
+    elif continuar.lower().strip() in ["y","yes","s","si"]:
+        return True
+    else:
+        imprime_error("OPCION INVALIDA, regresando al menu principal")
+        return True
+
+
+#########################################################################
+
+def programa():
+    while True:
+        try:
+            mostrar_menu()
+            opcion = int(input(Fore.CYAN +"Ingrese una opcion (1-6): "))
+            match opcion:
+                case 6:
+                    break
+                case 1:
+                    pass
+                case 2:
+                    pass 
+                case 3:
+                    pass 
+                case 4:
+                    pass 
+                case 5:
+                    pass 
+                case _:
+                    imprime_error("Opcion incorrecta, porfavor seleccione una valida (1-6)")
+
+            if continuar_menu():
+                continue
+            else:
+                break
+        except ValueError:        
+            imprime_error("TIPO INVALIDO, la opcion elegida debe ser un numero en el rango 1-6. ")
+
+
+########################################################
+def imprime_error(msj=" "):
+    print(Fore.RED + Style.BRIGHT +"=" * 70)
+    print(Fore.RED + Style.BRIGHT + Back.BLACK +f"ERROR: {msj.upper()}")
+    print(Fore.RED + Style.BRIGHT +"=" * 70)
+
+
+#?VALIDADO
 ########################################################
 def esta_entre(num, num1, num2):
     if num >= num1 and num <= num2:

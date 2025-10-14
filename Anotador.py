@@ -103,21 +103,22 @@ ejemplo = "               hOLa Mundo                  "
 # print(ejemplo.lower())    #-> Minuscula
 # print(ejemplo.capitalize())   #-> Primera letra en mayusucla #!si hay espacios no lo toma
 # print(ejemplo.title())    #-> Cada palabra en mayuscula
-print("===================")
-print(ejemplo.find("Mundo"))   #→ posición donde empieza "Mundo"
-print(ejemplo.count("o"))      #→ cuántas veces aparece la letra "o"
-print("Hola" in ejemplo)       # True → verifica si existe
-print("Python" not in ejemplo) # True → verifica si no existe
-print("===================")
-print(ejemplo.replace("Mundo", "Python"))  # "  Hola Python  "
-print("===================")
+
+# print("===================")
+# print(ejemplo.find("Mundo"))   #→ posición donde empieza "Mundo"
+# print(ejemplo.count("o"))      #→ cuántas veces aparece la letra "o"
+# print("Hola" in ejemplo)       # True → verifica si existe
+# print("Python" not in ejemplo) # True → verifica si no existe
+# print("===================")
+# print(ejemplo.replace("Mundo", "Python"))  # "  Hola Python  "
+# print("===================")
 
 
-frase = "manzana,pera,banana"
-lista = frase.split(",") 
-print(lista)
-print("===================")
-print("-h-".join(lista))
+# frase = "manzana,pera,banana"
+# lista = frase.split(",") 
+# print(lista)
+# print("===================")
+# print("-h-".join(lista))
 
 
 ##################################################################################################
@@ -220,3 +221,9 @@ def insertion_sort(arr):
 # sys.path.append(parent)
 
 #######################################################
+
+if __name__ == "__main__":
+    print(8)
+    
+
+from colorama import init, Fore, StyleS

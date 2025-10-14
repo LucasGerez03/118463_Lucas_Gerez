@@ -1,10 +1,10 @@
-# lista = []
+# # lista = []
 
-# lista += [1]
-# lista.append(2)
-# lista += ["y"]
-# lista.append([4])
-# print(lista)
+# # lista += [1]
+# # lista.append(2)
+# # lista += ["y"]
+# # lista.append([4])
+# # print(lista)
 
 def listar_numeros_ingresados():
     """Solicita al usuario números y los almacena en orden de ingreso."""
@@ -41,3 +41,4 @@ def listar_numeros_ingresados():
         print("No se ingresó ningún número.")
 
 listar_numeros_ingresados()
+

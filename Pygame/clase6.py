@@ -98,9 +98,10 @@ def juego():
         mostrar_mensaje(f"Puntos: {puntaje}", ROJO, (10, 10))
         pygame.display.flip()
         reloj.tick(10)
-
+        
 # Ejecutar
 juego()
+
 
 """- Hacer pantalla de inicio con 4 botoones: "JUGAR", "MODO FACIL", "MODO NORMAL", "MODO IMPOSIBLE"
 - Hacer pantalla de fin cuando pierda con mi puntaje y un botón para reiniciar

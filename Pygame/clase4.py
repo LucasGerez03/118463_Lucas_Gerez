@@ -21,7 +21,7 @@ fuenteInter = pygame.font.SysFont("Arial", 20)
 
 
 while running:   
- 
+
     for event in pygame.event.get(): #?eventos, son como acciones ,son muy importantes
         print(event) #? para ver los eventos en consola
         if event.type == pygame.QUIT:
@@ -58,4 +58,4 @@ while running:
     pygame.display.flip()
     clock.tick(60)  # limits FPS to 60
 
-pygame.quit() #!NO OLVIDAR (METODO)
+pygame.quit()#!NO OLVIDAR (METODO)
