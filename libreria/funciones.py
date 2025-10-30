@@ -219,3 +219,13 @@ def diferencia_entre_arrays(array_1:list, array_2:list)-> list|None:
 # listorti_1= [1,2,3,4,5]
 # listorti_2= [3,4,5,6,7]
 # print(diferencia_entre_arrays(listorti_1, listorti_2))
+
+
+##############################################################
+def ingresar_y_validar_str(msj:str):
+    try:
+        string = input(f"{msj}")
+        return string
+    except Exception as e:
+        imprime_error(f"{e}")
+ingresar_y_validar_str("ingrese una categoria: ")
